@@ -2,8 +2,6 @@
 /* DOM traversal                                                          */
 /* ---------------------------------------------------------------------- */
 
-const { getRandomSeed } = require('canvas-sketch-util/random');
-
 
 /* 모든 노드에서 사용 */
 // - parentNode
@@ -29,20 +27,39 @@ const { getRandomSeed } = require('canvas-sketch-util/random');
 // - querySelectorAll
 // - closest
 
-/* 문서 대상 확인 */
-// - matches
 
 // let first = document.querySelector('.first');
 
-let span = document.querySelectorAll('span');
-
-console.log(span);
-
-let [first, second] = document.querySelectorAll('span');
-
-console.log(second);
-
-getRandomNode('.first')
+let [first,second] = document.querySelectorAll('span');
 
 
+// console.log(second);
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+/* 문서 대상 확인 */
+// - matches
 // - contains
+
+
+
+
+
+
+
+
+
+
+
