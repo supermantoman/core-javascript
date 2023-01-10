@@ -22,12 +22,34 @@
 
 /* DOM 프로퍼티 검토 ------------------------------------------------------- */
 
-// - elementNode.hasAttribute(name) – 속성 존재 여부 확인
-// - elementNode.getAttribute(name) – 속성값을 가져옴
-// - elementNode.setAttribute(name, value) – 속성값을 변경함
-// - elementNode.removeAttribute(name) – 속성값을 지움
-// - elementNode.attributes – 열거 가능한(iterable) 속성 집합을 반환함
 
+let first = getNode('.first');
+
+
+// - elementNode.hasAttribute(name) – 속성 존재 여부 확인
+// 혹시 너 이런 속성을 가지고 있니?
+console.log(first.hasAttribute('class')); //true
+
+// - elementNode.getAttribute(name) – 속성값을 가져옴
+console.log(first.getAttribute('class'));
+console.log(first.getAttribute('class') === 'first');
+
+// - elementNode.setAttribute(name, value) – 속성값을 변경함
+first.setAttribute('id', 'box'); //표준 속성 추가
+first.setAttribute('some', 'hello'); //비표준 속성 추가, 바람직X -> Dataset으로 설정해주야함.
+
+// - elementNode.removeAttribute(name) – 속성값을 지움
+first.removeAttribute('some');
+first.setAttribute('some', ''); //set으로 지우기는 빈문자열!
+first.setAttribute('class', 'is-active'); //set으로 지우기는 빈문자열!
+
+
+// - elementNode.attributes – 열거 가능한(iterable) 속성 집합을 반환함
+console.log(first.attributes); //유사배열
+for (let value of first.attribues) {
+  console.log(value);
+} //for .. of 로 확인가능
+// 열거와 순환가능 : 안의 값을 다 뽑아내주는 역할이 for ... of
 
 /* 비표준 속성, 프로퍼티 설정 ------------------------------------------------- */
 
@@ -35,3 +57,7 @@
 // data-* 속성을 사용하면 읽기 쉽고, 수정도 손쉽습니다.
 
 // - elementNode.dataset
+
+first.dataset.play = 'playing' //<... data-play="playing" /> //set
+console.log(first.dataset.play); //get
+//이게 제대로 배운것
