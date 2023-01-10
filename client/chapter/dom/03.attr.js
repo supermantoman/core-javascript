@@ -46,7 +46,7 @@ first.setAttribute('class', 'is-active'); //set으로 지우기는 빈문자열!
 
 // - elementNode.attributes – 열거 가능한(iterable) 속성 집합을 반환함
 console.log(first.attributes); //유사배열
-for (let value of first.attribues) {
+for (let value of first.attributes) {
   console.log(value);
 } //for .. of 로 확인가능
 // 열거와 순환가능 : 안의 값을 다 뽑아내주는 역할이 for ... of
@@ -61,3 +61,17 @@ for (let value of first.attribues) {
 first.dataset.play = 'playing' //<... data-play="playing" /> //set
 console.log(first.dataset.play); //get
 //이게 제대로 배운것
+
+// 유틸함수
+// get-set-common
+
+function getAttr(node, prop){
+
+  if(typeof node === 'string'){
+    node = getNode(node);
+  }
+
+  return node.getAttribute('prop');
+}
+
+getAttr('first','class') //first
