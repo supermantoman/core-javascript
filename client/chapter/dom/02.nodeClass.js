@@ -54,6 +54,13 @@ first.textContent = '멋사' // setter
 
 first.hidden = true;
 
+getNode('h1').hidden = true;
+
 // - hidden
 // * hidden은 HTML 속성으로, DOM 프로퍼티로 사용 가능
 // * hidden 프로퍼티는 기술적으로 style="display:none"와 동일
+
+// What is Reality?
+// What is Real-InterActive-Design?
+// What is Real-InterAction?
+// Why Developers make Functions?
