@@ -41,7 +41,7 @@ first.setAttribute('some', 'hello'); //비표준 속성 추가, 바람직X -> Da
 // - elementNode.removeAttribute(name) – 속성값을 지움
 first.removeAttribute('some');
 first.setAttribute('some', ''); //set으로 지우기는 빈문자열!
-first.setAttribute('class', 'is-active'); //set으로 지우기는 빈문자열!
+// first.setAttribute('class', 'is-active'); //set으로 지우기는 빈문자열!
 
 
 // - elementNode.attributes – 열거 가능한(iterable) 속성 집합을 반환함
@@ -71,7 +71,21 @@ function getAttr(node, prop){
     node = getNode(node);
   }
 
-  return node.getAttribute('prop');
+  return node.getAttribute(prop);
 }
 
 getAttr('first','class') //first
+
+
+
+const setAttr = function (node, prop, value) {
+  //validation 유효성검사
+  if(typeof node === 'string') node = getNode(node);
+  if(typeof prop !== 'string') throw new TypeError('setAttr 함수의 두 번째 인자의 타입은 string이어야 합니다.')
+  if(!value) throw new SyntaxError('setAttr 함수의 세 번째 인자는 필수 값입니다.')
+
+  node.setAttribute(prop, value); //return은 필요없다. 함수를 통해 무언가 얻고자 하는 게 아니라 설정만.
+}
+
+
+setAttr('.first','data-value','hello');
