@@ -10,16 +10,29 @@
 // - element.cloneNode(deep) – 요소 복제. deep==true일 경우 모든 자손 요소도 복제
 
 let div = document.createElement('div');
+div.className = 'third';
+div.textContent = '세 번째 입니다.';
 
 
 /* 노드 삽입, 삭제 메서드 ---------------------------------------------------- */
 
 // - node.append(노드나 문자열) – node 끝에 노드를 삽입
+const h1 = getNode('h1');
+
+// h1.append(div);
+
 // - node.prepend(노드나 문자열) – node 맨 앞에 노드를 삽입
+// h1.prepend(div);
+
 // - node.before(노드나 문자열) – node 이전에 노드를 삽입
+// h1.before(div);
+
 // - node.after(노드나 문자열) – node 다음에 노드를 삽입
+
 // - node.replaceWith(노드나 문자열) – node를 대체
+
 // - node.remove() – node를 제거
+// h1.remove();
 
 
 /* '오래된' 메서드 ----------------------------------------------------------- */
@@ -35,6 +48,14 @@ let div = document.createElement('div');
 // - insertAdjacentHTML
 // - insertAdjacentElement
 // - insertAdjacentText
+
+let index = 1;
+let template = /* html */ `<div class="box0${index}"> 새추가된 엘리먼트입니다.</div>`
+
+h1.insertAdjacentHTML('beforeend', template)
+
+
+
 
 // - "beforebegin" – elem 바로 앞에 html을 삽입
 // - "afterbegin" – elem의 첫 번째 자식 요소 바로 앞에 html을 삽입

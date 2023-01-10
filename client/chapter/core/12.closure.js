@@ -7,18 +7,18 @@
 // - JavaScript의 매우 강력한 특성으로 독립적인 변수를 참조하는 함수를 말합니다.
 //   즉, 클로저에 정의된 함수는 그것이 작성된 환경을 '기억'합니다.
 
-function first(){
-  let x = 10;
+// function first(){
+//   let x = 10;
 
-  function second(){
-    let y = 30;
-    x+ y;
-  }
-}
+//   function second(){
+//     let y = 30;
+//     x+ y;
+//   }
+// }
 
 
 
-const user = first()
+// const user = first()
 
 
 
