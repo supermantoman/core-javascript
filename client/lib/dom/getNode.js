@@ -39,8 +39,6 @@ let [first,second] = document.querySelectorAll('span');
 
 
 
- 
-
 
 
 
