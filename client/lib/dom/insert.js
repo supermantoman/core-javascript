@@ -19,4 +19,4 @@ function insertAfter(node, text) {
   node.insertAdjacentHTML("afterend", text);
 }
 
-insertBefore('h1',template)
+// insertBefore('h1',template)

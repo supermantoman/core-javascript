@@ -8,7 +8,7 @@ function getAttr(node, prop){
   return node.getAttribute(prop);
 }
 
-getAttr('first','class') //first
+// getAttr('first','class') //first
 
 //setAttr
 const setAttr = function (node, prop, value) {
