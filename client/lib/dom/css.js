@@ -65,7 +65,8 @@ function setCss(node, prop, value) {
 }
 
 //get,set
-const css = (node, prop, value) => !value ? getCss(node,prop) : setCss(node prop, value);
+const css = (node, prop, value) => !value ? getCss(node,prop) : setCss(node, prop, value);
 
 // getCss('.first', 'font-size')
 // getCss('.first', 'color', 'red')
+
