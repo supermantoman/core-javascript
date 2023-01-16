@@ -1,65 +1,102 @@
+
+const user = {
+  sum : function (){
+      return this
+    }
+}
+
+user.sum()
+
+
+
 /* ---------------------------------------------------------------------- */
 /* Type Conversion                                                        */
 /* ---------------------------------------------------------------------- */
 
 
 /* 데이터 → 문자 ----------------------------------------------------------- */
+//  String()  /  'string' + ''
+// number → '2022'
+const YEAR = 2022;
 
-// // number -> '2022'
-// const bbb = 20212;
+console.log(String(YEAR));
 
-// let bzb = String(bbb);
-// console.log(String(bzb));
-// console.log(typeof(bbb));
-
-// undefined, null -> 'undefined'
-// console.log(String(undefined));
+// undefined → 'undefined'
+// null → 'null'
 
 let days = null;
 console.log(String(days));
 
-// boolean -> 'true' or 'false'
+
+// boolean → 'true' or 'false'
 let isKind = true;
-console.log(String(isKind));
+console.log(isKind + '');
 
 
-// /* 데이터 → 숫자 ----------------------------------------------------------- */
+/* 데이터 → 숫자 ----------------------------------------------------------- */
 
-// // Number()
+//  Number()
 
-// // undefined -> NaN
-// console.log(Number(undefined));
+// undefined → NaN
+console.log(Number(undefined));
 
-// // null -> 0
-// let money = null;
-// console.log(Number(money));
+// null → 0
+let money = null;
+console.log(Number(money));
 
-// // boolean -> true : 1 / false : 0
-// //  * / + 는 모두 숫자로 바뀐다. 중요! 실무에서 코드보면 당황노노 이해하기
-// let cutie = false;
-// console.log(cutie * 1);
-// console.log(cutie / 1);
-// console.log(+cutie);
+// boolean  → true : 1 / false : 0
+// *1
+// /1
+// + 
+let cutie = false;
+console.log(+cutie);
 
-// // string 녹음 14분대 다시 듣기
-// let num = '123'
-// console.log(num * 1);
 
-// // numeric string
-// // parseInt 정수, parseFloat 부동소숫점
-// // 프엔은 보통 10진수 많이 사용한다. 진수는 꼭 명시해주자.
-// let width = '320px';
-// console.log(parseFloat(width, 10));
+// string 숫자형 문자 
 
-// /* 데이터 → 불리언 ---------------------------------------------------------- */
+let num = '     123      '
+console.log(num * 1);
 
-// // null, undefined, 0, NaN, '' -> 모두 false
-// // 위에 나열한 것 이외의 것들
-// // ' ' 공백 있으면 true 나옴 !
 
-console.log(Boolean(null));
+// numeric string
+let width = '32.23120px';
 
+console.log(parseFloat(width,10));
+
+
+
+/* 데이터 → 불리언 ---------------------------------------------------------- */
+
+// null, undefined, 0, NaN, '' → false
+// 위에 나열한 것 이외의 것들 
+
+
+
+console.log(Boolean(123));
 console.log(!!null);
-console.log(!null);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
