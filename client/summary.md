@@ -23,3 +23,6 @@
 
 + throw new TypeError
 > if(typeof n !== 'number') throw new TypeError('getRandom 함수의 매개변수는 숫자 타입만이 가능합니다.')
+
++ shake
++ promise.then()
