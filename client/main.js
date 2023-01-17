@@ -1,6 +1,12 @@
 
 
-import { diceAnimation, getNode } from "./lib/index.js";
+import { 
+  diceAnimation, 
+  disableElement, 
+  enableElement, 
+  getNode,
+  getNodes 
+} from "./lib/index.js";
 
 
 // [ 주사위 굴리기 ]
@@ -11,9 +17,11 @@ import { diceAnimation, getNode } from "./lib/index.js";
 
 // diceAnimation()
 
+// 배열의 구조분해할당 !!! 이것이 바로!!
 
-const rollingDiceButton = getNode('.buttonGroup > button:nth-child(1)');
-
+// const rollingDiceButton = getNode('.buttonGroup > button:nth-child(1)');
+// const recordButton = getNode('.buttonGroup > button:nth-child(2)');
+// const resetButton = getNode('buttonGroup > button:nth-child(3)');
 
 // IIFE
 
@@ -25,9 +33,14 @@ const handlerRollingDice = (() => {
   return () => {
 
     if(!isRolling){
-    stopAnimation = setInterval(diceAnimation,100)  
+    stopAnimation = setInterval(diceAnimation,100)
+    
+    disableElement(recordButton);
+    disableElement(resetButton);
     } else{
       clearInterval(stopAnimation);
+      enableElement(recordButton);
+      enableElement(resetButton);
     }
 
     isRolling = !isRolling;
@@ -40,8 +53,22 @@ rollingDiceButton.addEventListener('click',handlerRollingDice)
 
 // let eventOff = bindEvent(rollingDiceButton,'click',handlerRollingDice);
 
+const [rollingDiceButton, recordButton, resetButton] = getNode('.buttonGroup > button');
 
 
+const recordlistWrapper = getNode('.recordListWrapper')
 
+let count = 0;
 
+function renderRecordListItem() {
 
+  let template = /* html */
+  <tr>
+    <td>${++count}</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+
+  insertLast('.recodListWrapper tbody', template)
+  
+}

@@ -29,6 +29,6 @@ export function diceAnimation (){
     [-180,0], // 6
   ]
 
-  gsap.to(cube,{ease:'linear',duration:0.2,z:-100,rotationX:rotationValue[random][0],rotationY:rotationValue[random][1],onComplete:complete})
+  gsap.to(cube,{ease:'linear',duration:0.2,z:-100,rotationX:rotationValue[random][0],rotationY:rotationValue[random][1],onComplete:complete}) //종료시점에  
 
-}
+} 
